@@ -1,0 +1,6 @@
+{
+  "name": "Konfirmasi Cetak KTA PGRI",
+  "description": "Aplikasi konfirmasi pencetakan Kartu Tanda Anggota (KTA) PGRI per jenjang dan lembaga dengan rekapitulasi, validasi, cetak laporan PDF/Kop resmi, serta impor/ekspor Excel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

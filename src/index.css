@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+  --pgri-teal: #4e92a2;
+  --pgri-teal-dark: #3f7e8c;
+  --pgri-teal-light: #eaf4f6;
+}
+
+html, body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+  background-color: #edf2f7;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  header, footer, nav, button, input, select, .print\:hidden, [role="dialog"] > div:first-child {
+    display: none !important;
+  }
+
+  .print\:p-0 {
+    padding: 0 !important;
+  }
+
+  .print\:m-0 {
+    margin: 0 !important;
+  }
+
+  .print\:overflow-visible {
+    overflow: visible !important;
+  }
+
+  .print\:border-black {
+    border-color: #000000 !important;
+  }
+
+  .print\:text-black {
+    color: #000000 !important;
+  }
+
+  table {
+    page-break-inside: auto;
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto;
+  }
+
+  th, td {
+    border-color: #1e293b !important;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  .break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+}

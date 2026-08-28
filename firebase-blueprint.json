@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "Lembaga": {
+      "title": "Lembaga",
+      "description": "Data Lembaga Pendidikan / Sekolah PGRI beserta data anggota",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "jenjang": { "type": "string", "enum": ["PAUD", "TK", "SD", "SMP/MTs", "SMA/SMK"] },
+        "nama": { "type": "string" },
+        "kecamatan": { "type": "string" },
+        "statusValidasi": { "type": "string", "enum": ["TERVALIDASI", "BELUM_VALIDASI"] },
+        "validatedAt": { "type": "string" },
+        "validatorName": { "type": "string" },
+        "catatan": { "type": "string" },
+        "anggota": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "jenjang", "nama"]
+    },
+    "AppSettings": {
+      "title": "AppSettings",
+      "description": "Pengaturan KOP Surat, Data Pejabat Cabang, dan Berita Acara PGRI",
+      "type": "object",
+      "properties": {
+        "namaCabang": { "type": "string" },
+        "kabupatenKota": { "type": "string" },
+        "namaKetua": { "type": "string" },
+        "npaKetua": { "type": "string" },
+        "namaSekretaris": { "type": "string" },
+        "npaSekretaris": { "type": "string" },
+        "namaVerifikator": { "type": "string" },
+        "jabatanVerifikator": { "type": "string" },
+        "nomorSuratTugas": { "type": "string" },
+        "nomorSuratBeritaAcara": { "type": "string" },
+        "alamatSekretariat": { "type": "string" },
+        "kontakEmail": { "type": "string" },
+        "kontakHp": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["namaCabang", "kabupatenKota"]
+    }
+  },
+  "firestore": {
+    "/lembagas/{lembagaId}": {
+      "schema": "Lembaga",
+      "description": "Koleksi data lembaga sekolah dan daftar konfirmasi anggota KTA"
+    },
+    "/settings/{settingId}": {
+      "schema": "AppSettings",
+      "description": "Dokumen konfigurasi kop surat dan nama pejabat cabang"
+    }
+  }
+}
